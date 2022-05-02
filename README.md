@@ -24,7 +24,7 @@ Project level gradle file
 App level gradle file
 ```bash
 	dependencies {
-	        implementation 'com.github.rkahir21:S3Manager:c4ccbfb0bd'
+	         implementation 'com.github.rkahir21:S3Manager:v1.0'
 	}
 
 ```
