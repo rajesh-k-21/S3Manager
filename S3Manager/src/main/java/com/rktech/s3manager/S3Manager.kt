@@ -115,7 +115,7 @@ class S3Manager(context: Context) {
                 bytesCurrent: Long,
                 bytesTotal: Long
             ) {
-                s3SingleTransferListener.onProgress((bytesCurrent / bytesTotal * 100).toInt())
+                s3SingleTransferListener.onProgress((100 * bytesCurrent / bytesTotal).toInt())
             }
 
             override fun onError(id: Int, ex: Exception?) {
@@ -172,7 +172,7 @@ class S3Manager(context: Context) {
                     bytesCurrent: Long,
                     bytesTotal: Long
                 ) {
-                    s3MultipleTransferListener.onProgress((bytesCurrent / bytesTotal * 100).toInt())
+                    s3MultipleTransferListener.onProgress((100 * bytesCurrent / bytesTotal).toInt())
                 }
 
                 override fun onError(id: Int, ex: Exception?) {
