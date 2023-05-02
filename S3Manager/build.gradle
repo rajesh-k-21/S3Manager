@@ -42,6 +42,6 @@ dependencies {
 
     // For S3
     implementation 'com.amazonaws:aws-android-sdk-s3:2.67.0'
-    implementation 'com.amazonaws:aws-android-sdk-cognito:2.67.0'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.20.1'
     implementation('com.amazonaws:aws-android-sdk-mobile-client:2.67.0@aar') {transitive = true }
 }
