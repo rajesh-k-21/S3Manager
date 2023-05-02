@@ -41,7 +41,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // For S3
-    implementation 'com.amazonaws:aws-android-sdk-s3:2.44.0'
-    implementation 'com.amazonaws:aws-android-sdk-cognito:2.20.1'
-    implementation('com.amazonaws:aws-android-sdk-mobile-client:2.44.0@aar') {transitive = true }
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.67.0'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.67.0'
+    implementation('com.amazonaws:aws-android-sdk-mobile-client:2.67.0@aar') {transitive = true }
 }

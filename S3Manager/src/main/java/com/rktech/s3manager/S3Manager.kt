@@ -207,7 +207,6 @@ class S3Manager(context: Context) {
     }
 
     companion object {
-
         const val CONNECTION_TIMEOUT = 600000
 
         object KEYS {
