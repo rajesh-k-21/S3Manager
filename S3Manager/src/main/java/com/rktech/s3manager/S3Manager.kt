@@ -133,7 +133,7 @@ class S3Manager(context: Context) {
     ) {
 
         val filesName = arrayListOf<String>()
-        val uploadedFilesName = ArrayList<String>()
+        val uploadedFilesName = ArrayList<Pair<String,String>>()
 
         files.forEach {
             val fileName = it.getRandomName()!!
@@ -144,10 +144,10 @@ class S3Manager(context: Context) {
                 override fun onStateChanged(id: Int, state: TransferState?) {
                     when (state) {
                         TransferState.COMPLETED -> {
-                            uploadedFilesName.add(fileName)
+                            uploadedFilesName.add(Pair(fileName,it.path))
 
                             if (files.size == uploadedFilesName.size) {
-                                s3MultipleTransferListener.onCompleted(filesName)
+                                s3MultipleTransferListener.onCompleted(uploadedFilesName)
                             }
 
                             s3MultipleTransferListener.filesUploadedCount(
