@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             s3MultipleTransferListener = object :
                 S3MultipleTransferListener { //file uploading status listener
 
-                override fun onCompleted(listOfName: ArrayList<String>) {
+                override fun onCompleted(listOfName: ArrayList<Pair<String, String>>) {
                     //Do something on files uploading successfully
                 }
 

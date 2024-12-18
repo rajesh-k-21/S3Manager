@@ -24,7 +24,7 @@ Project level gradle file
 App level gradle file
 ```bash
 	dependencies {
-	         implementation 'com.github.rajesh-k-21:S3Manager:v1.3'
+	         implementation 'com.github.rajesh-k-21:S3Manager:v1.4'
 	}
 
 ```
@@ -104,31 +104,31 @@ How to use this amazing lib and save your time
      }
 
      private fun uploadFiles() {
-         s3Manager.uploadFiles(
-             files = arrayListOf(File("demo.jpg")), // array of file need to upload
-             directory = "customer/user/profile", // full path of upload directory
-             s3MultipleTransferListener = object :
-                 S3MultipleTransferListener { //file uploading status listener
+        s3Manager.uploadFiles(
+            files = arrayListOf(File("demo.jpg")), // array of file need to upload
+            directory = "customer/user/profile", // full path of upload directory
+            s3MultipleTransferListener = object :
+                S3MultipleTransferListener { //file uploading status listener
 
-                 override fun onCompleted(listOfName: ArrayList<String>) {
-                     //Do something on files uploading successfully
-                 }
+                override fun onCompleted(listOfName: ArrayList<Pair<String, String>>) {
+                    //Do something on files uploading successfully
+                }
 
-                 override fun onError(id: Int, exception: Exception?) {
-                     //Do something on got any error file uploading
-                 }
+                override fun onError(id: Int, exception: Exception?) {
+                    //Do something on got any error file uploading
+                }
 
-                 override fun onProgress(progress: Int) {
-                     //Do something on file uploading progress
-                 }
+                override fun onProgress(progress: Int) {
+                    //Do something on file uploading progress
+                }
 
-                 override fun filesUploadedCount(totalFiles: Int, pendingFile: Int) {
-                     //Do something on file uploading count
-                 }
+                override fun filesUploadedCount(totalFiles: Int, pendingFile: Int) {
+                    //Do something on file uploading count
+                }
 
-             }
-         )
-     }
+            }
+        )
+    }
 ```
 
 ## Contributing
